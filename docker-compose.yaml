@@ -18,3 +18,21 @@ services:
     image: web:1
     depends_on:
       - catalogue
+
+  redis:
+    container_name: redis
+    image: redis:1
+
+  user:
+    image: user:v1
+    container_name: user
+    depends_on:
+      - redis
+      - mongodb
+
+  cart:
+    image: cart:v1
+    container_name: cart
+    depends_on:
+      - redis
+      - catalogue

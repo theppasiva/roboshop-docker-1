@@ -1,0 +1,20 @@
+networks:
+  default:
+    external:
+      name: roboshop
+services:
+  mongodb:
+    container_name: mongodb
+    image: mongodb:1
+
+  catalogue:
+    container_name: catalogue
+    image: catalogue:1
+    depends_on:
+      - mongodb
+  
+  web:
+    container_name: web
+    image: web:1
+    depends_on:
+      - catalogue

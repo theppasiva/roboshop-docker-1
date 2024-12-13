@@ -24,14 +24,14 @@ services:
     image: redis:1
 
   user:
-    image: user:v1
+    image: user:1
     container_name: user
     depends_on:
       - redis
       - mongodb
 
   cart:
-    image: cart:v1
+    image: cart:1
     container_name: cart
     depends_on:
       - redis

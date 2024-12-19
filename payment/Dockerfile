@@ -1,4 +1,4 @@
-FROM python:3.9
+FROM python:3.9-alpine3.21
 EXPOSE 8080
 ENV AMQP_USER=roboshop \
     AMQP_PASS=roboshop123   
